@@ -8,9 +8,9 @@ from dataclasses import dataclass, field
 from enum import Enum, auto
 from typing import NamedTuple
 import random
-# -----------------------------------------------------------------------------
+
 # Types and Constants
-# -----------------------------------------------------------------------------
+
 class Direction(Enum):
     """Cardinal directions the robot can face."""
     NORTH = auto()
@@ -261,9 +261,9 @@ class HazardousWarehouseEnv:
             "percept": self._last_percept._asdict(),
             "total_reward": self._total_reward,
         })
-    # -------------------------------------------------------------------------
+    
     # Public query methods for agents
-    # -------------------------------------------------------------------------
+    
     @property
     def robot_position(self) -> tuple[int, int]:
         """Current robot position (x, y)."""
@@ -296,9 +296,9 @@ class HazardousWarehouseEnv:
     def history(self) -> list[dict]:
         """Episode history for replay."""
         return self._history.copy()
-    # -------------------------------------------------------------------------
+  
     # Methods for visualization (reveal hidden state)
-    # -------------------------------------------------------------------------
+
     def get_true_state(self) -> dict:
         """Return complete world state (for visualization/debugging only)."""
         return {
@@ -359,9 +359,9 @@ class HazardousWarehouseEnv:
                     row.append("?")
             lines.append(" ".join(row))
         return "\n".join(lines)
-# -----------------------------------------------------------------------------
+
 # Example Usage
-# -----------------------------------------------------------------------------
+
 if __name__ == "__main__":
     # Create environment with fixed seed for reproducibility
     env = HazardousWarehouseEnv(seed=42)

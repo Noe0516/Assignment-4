@@ -541,7 +541,7 @@ def run_agent(env: HazardousWarehouseEnv, max_steps: int = 200, verbose: bool = 
 
 def task5_test():
     """Task 5: run on the RN example layout and report results."""
-    from hazardous_warehouse_visualization import configure_rn_example_layout
+    from warehouse_viz import configure_rn_example_layout
 
     print("=" * 60)
     print("TASK 5 — Agent Test on RN Example Layout")
